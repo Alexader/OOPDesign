@@ -1,0 +1,27 @@
+//Submit this file
+#include "node.h"
+//You are NOT allowed to include any additional library
+
+Node::Node(Shop *shop, Node *next) : shop(shop), next(next) {}
+
+Node::~Node() {
+	delete shop;
+	//delete next;
+}
+
+Shop *Node::getShop() {
+	return shop;
+}
+
+Node *Node::getNext() {
+	return next;
+}
+
+void Node::setShop(Shop *shop) {
+	// deep copy or shadow copy?
+	this->shop = shop;
+}
+
+void Node::setNext(Node *next) {
+	this->next = next;
+}
