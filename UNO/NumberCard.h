@@ -10,12 +10,13 @@
 #include "Card.h"
 
 class NumberCard: public Card {
-
 public:
   bool operator^(const Card &t) const;
   NumberCard(int digit, Color color);
-  virtual void castEffect(Player *&currentPlayer, CardPile &drawPile, CardPile &discardPile) = 0;
-  const void serialize(ostream &os);
-}
+  void castEffect(Player *&currentPlayer, CardPile &drawPile, CardPile &discardPile);
+
+private:
+  void serialize(ostream &os) const;
+};
 
 #endif /* NUMBERCARD_H_ */
